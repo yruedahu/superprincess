@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Animations/AnimatedSprite.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CapsuleShape2D" id=2]
+custom_solver_bias = 0.2
+radius = 137.0
+height = 153.56
+
+[node name="Player" type="KinematicBody2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 5, 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+show_behind_parent = true
+position = Vector2( 20, 9 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" parent="." instance=ExtResource( 1 )]
+frame = 4
